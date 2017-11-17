@@ -19,6 +19,19 @@ public class Main {
 
     private static final int MIN_INT_VALUE = 0;
     private static final int MAX_INT_VALUE = 255;
+
+    /*
+    * I wrote the program to generate a 50x50 bitmap image.
+    *
+    * The RANDOM.ORG API limits the sequence to 10,000 or shorter in length
+    * therefore getting 128x128 random pixel values was not possible in one request.
+    *
+    * Due to running out of time I was not able to write a work around for getting 128x128 pixel values.
+    * The workaround I would have implemented will send N requests where,
+    *       N = Math.ceil((PIC_HEIGHT * PIC_WIDTH) / 10000)
+    * and each time requesting 10,000 numbers except in the last iteration
+    * where requested numbers would be ((PIC_HEIGHT * PIC_WIDTH) % 10000).
+    * */
     private static final int PICTURE_HEIGHT = 50;
     private static final int PICTURE_WIDTH = 50;
     private static final int TIMEOUT_VALUE_SEC = 5; // wait 5 seconds before timing out the request
